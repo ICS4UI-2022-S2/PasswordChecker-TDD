@@ -11,15 +11,16 @@ public class PasswordCheckerTest {
 
     @Test
     public void testCheckLength() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter a password:");
-        String userPassword = input.nextLine();
-        PasswordChecker c = new PasswordChecker(userPassword);
-        int passwordLength = c.checkLength(userPassword);
-        if(passwordLength < 8 || passwordLength > 15){
-            System.out.println("This is not a valid password. Please make the password between 8 and 15 characters.");
-        }else if(passwordLength >= 8 && passwordLength <= 15){
-            System.out.println("This is a valid password.");
+        try (Scanner input = new Scanner(System.in)) {
+            System.out.println("Enter a password:");
+            String enteredPassword = input.nextLine();
+            Password userPassword = new Password(enteredPassword);
+            boolean validPassword = userPassword.passwordValid();
+            if(validPassword){
+                System.out.println("This is a valid password.");
+            }else if(validPassword = false){
+                System.out.println("This is not a valid password. Make sure it's between 8 to 15 characters.");
+            }
         }
     }
 }
