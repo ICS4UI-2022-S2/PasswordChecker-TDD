@@ -47,4 +47,11 @@ public class PasswordCheckerTest {
         assertEquals(true, hasDigit);
     }
 
+    @Test
+    public void testSymbolCheck(){
+        userPassword.setPassword("p@ssword");
+        boolean hasSymbol = userPassword.hasSymbol();
+        assertEquals(true, hasSymbol);
+    }
+
 }
