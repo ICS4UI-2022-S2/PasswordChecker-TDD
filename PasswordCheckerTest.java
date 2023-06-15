@@ -28,20 +28,23 @@ public class PasswordCheckerTest {
 
     @Test
     public void testLowercaseCheck(){
-        try(Scanner input = new Scanner(System.in)){
-            userPassword.setPassword("PASSwORD");
-            boolean hasLowercase = userPassword.hasLowercase();
-            assertEquals(true, hasLowercase);
-        }
+        userPassword.setPassword("PASSwORD");
+        boolean hasLowercase = userPassword.hasLowercase();
+        assertEquals(true, hasLowercase);
     }
 
     @Test
     public void testUppercaseCheck(){
-        try(Scanner input = new Scanner(System.in)){
-            userPassword.setPassword("passWord");
-            boolean hasUppercase = userPassword.hasUppercase();
-            assertEquals(true, hasUppercase);
-        }
+        userPassword.setPassword("passWord");
+        boolean hasUppercase = userPassword.hasUppercase();
+        assertEquals(true, hasUppercase);
+    }
+
+    @Test
+    public void testDigitCheck(){
+        userPassword.setPassword("passw0rd");
+        boolean hasDigit = userPassword.hasDigit();
+        assertEquals(true, hasDigit);
     }
 
 }
