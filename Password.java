@@ -29,10 +29,7 @@ public class Password {
         char[] letters = this.password.toCharArray();
         for (int i = 0; i < letters.length; i++) {
             char charSpot = letters[i];
-            String stringSpot = String.valueOf(charSpot);
-            stringSpot = stringSpot.toLowerCase();
-            char lowercaseSpot = stringSpot.charAt(0);
-            if(charSpot == lowercaseSpot){
+            if(charSpot >= 97 && charSpot <= 122){
                 hasLowercase = true;
             }
         }
@@ -44,10 +41,7 @@ public class Password {
         char[] letters = this.password.toCharArray();
         for (int i = 0; i < letters.length; i++) {
             char charSpot = letters[i];
-            String stringSpot = String.valueOf(charSpot);
-            stringSpot = stringSpot.toLowerCase();
-            char uppercaseSpot = stringSpot.charAt(0);
-            if(charSpot == uppercaseSpot){
+            if(charSpot >= 65 && charSpot <= 90){
                 hasUppercase = true;
             }
         }
