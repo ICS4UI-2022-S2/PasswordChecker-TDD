@@ -60,4 +60,16 @@ public class Password {
         return hasDigit;
     }
 
+    public boolean hasSymbol(){
+        boolean hasSymbol = false;
+        char[] letters = this.password.toCharArray();
+        for (int i = 0; i < letters.length; i++) {
+            char charSpot = letters[i];
+            if(charSpot >= 35 && charSpot <= 37 || charSpot == 33 || charSpot == 64){
+                hasSymbol = true;
+            }
+        }
+        return hasSymbol;
+    }
+
 }
