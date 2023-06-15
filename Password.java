@@ -23,4 +23,19 @@ public class Password {
         }
         return isLengthValid;
     }
+
+    public boolean hasLowercase(){
+        boolean hasLowercase = false;
+        char[] letters = this.password.toCharArray();
+        for (int i = 0; i < letters.length; i++) {
+            char charSpot = letters[i];
+            String stringSpot = String.valueOf(charSpot);
+            stringSpot = stringSpot.toLowerCase();
+            char lowercaseSpot = stringSpot.charAt(0);
+            if(charSpot == lowercaseSpot){
+                hasLowercase = true;
+            }
+        }
+        return hasLowercase;
+    }
 }

@@ -29,7 +29,7 @@ public class PasswordCheckerTest {
     @Test
     public void testLowercaseCheck(){
         try(Scanner input = new Scanner(System.in)){
-            userPassword.setPassword("PASSWORD");
+            userPassword.setPassword("PASSwORD");
             boolean hasLowercase = userPassword.hasLowercase();
             assertEquals(true, hasLowercase);
         }
