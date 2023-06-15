@@ -54,4 +54,11 @@ public class PasswordCheckerTest {
         assertEquals(true, hasSymbol);
     }
 
+    @Test
+    public void testFullPasswordCheck(){
+        userPassword.setPassword("Pa33w0rd!");
+        boolean validPassword = userPassword.passwordValid();
+        assertEquals(true, validPassword);
+    }
+
 }
