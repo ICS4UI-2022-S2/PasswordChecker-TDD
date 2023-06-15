@@ -1,26 +1,38 @@
 import org.junit.Before;
 import org.junit.Test;
+
+import junit.framework.TestFailure;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
+
 import java.util.Scanner;
 
 public class PasswordCheckerTest {
 
+    private Password userPassword;
+
     @Before
     public void beforeEachTestMethod(){
-        
+        userPassword = new Password(null);
     }
 
     @Test
-    public void testCheckLength() {
+    public void testLengthCheck() {
         try (Scanner input = new Scanner(System.in)) {
-            System.out.println("Enter a password:");
-            String enteredPassword = input.nextLine();
-            Password userPassword = new Password(enteredPassword);
-            boolean validPassword = userPassword.passwordValid();
-            if(validPassword){
-                System.out.println("This is a valid password.");
-            }else if(validPassword = false){
-                System.out.println("This is not a valid password. Make sure it's between 8 to 15 characters.");
-            }
+            userPassword.setPassword("password");
+            boolean validLength = userPassword.validLength();
+            assertEquals(true, validLength);
         }
     }
+
+    @Test
+    public void testLowercaseCheck(){
+        try(Scanner input = new Scanner(System.in)){
+            userPassword.setPassword("PASSWORD");
+            boolean hasLowercase = userPassword.hasLowercase();
+            assertEquals(true, hasLowercase);
+        }
+    }
+
 }

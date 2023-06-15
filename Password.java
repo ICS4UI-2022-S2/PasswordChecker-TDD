@@ -5,14 +5,22 @@ public class Password {
         this.password = password;
     }
 
-    public boolean passwordValid(){
+    public String getPassword(){
+        return this.password;
+    }
+
+    public void setPassword(String newPassword){
+        this.password = newPassword;
+    }
+
+    public boolean validLength(){
         int passwordLength = this.password.length();
-        boolean isPasswordValid;
-        if(passwordLength >= 8 || passwordLength <= 15){
-            isPasswordValid = true;
+        boolean isLengthValid;
+        if(passwordLength >= 8 && passwordLength <= 15){
+            isLengthValid = true;
         }else{
-            isPasswordValid = false;
+            isLengthValid = false;
         }
-        return isPasswordValid;
+        return isLengthValid;
     }
 }
