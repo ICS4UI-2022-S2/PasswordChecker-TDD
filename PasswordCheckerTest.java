@@ -35,4 +35,13 @@ public class PasswordCheckerTest {
         }
     }
 
+    @Test
+    public void testUppercaseCheck(){
+        try(Scanner input = new Scanner(System.in)){
+            userPassword.setPassword("passWord");
+            boolean hasUppercase = userPassword.hasUppercase();
+            assertEquals(true, hasUppercase);
+        }
+    }
+
 }
