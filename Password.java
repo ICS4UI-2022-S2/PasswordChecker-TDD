@@ -48,4 +48,16 @@ public class Password {
         return hasUppercase;
     }
 
+    public boolean hasDigit(){
+        boolean hasDigit = false;
+        char[] letters = this.password.toCharArray();
+        for (int i = 0; i < letters.length; i++) {
+            char charSpot = letters[i];
+            if(charSpot >= 48 && charSpot <= 57){
+                hasDigit = true;
+            }
+        }
+        return hasDigit;
+    }
+
 }
